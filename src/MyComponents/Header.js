@@ -1,23 +1,16 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 export default function Header(props) {
   return (
     <>
-      <Navbar className="container bg-light" expand="lg">
-        <Container>
-          <Navbar.Brand href="/">{props.title}</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/about">About</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <nav className="container navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">
+            {props.title}
+          </Link>
+        </div>
+      </nav>
     </>
   );
 }
